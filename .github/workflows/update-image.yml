@@ -1,0 +1,44 @@
+name: Update Docker Image
+on:
+  push:
+    branches:
+      - master
+  schedule:
+    - cron: "0 0 * * *"
+env:
+  DOCKER_BASE_NAME: docker.pkg.github.com/greatwizard/node-browsers/node-browsers
+  DOCKER_HUB_BASE_NAME: greatwizard/node-browsers
+jobs:
+  update:
+    runs-on: ubuntu-18.04
+    strategy:
+      matrix:
+        version:
+          - "10"
+          - "12"
+          - "13"
+          - "14"
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set env
+        run: |
+          export TAG_NAME="${{ matrix.version }}"
+          echo ::set-env name=PKG_TAG::"${DOCKER_BASE_NAME}:${TAG_NAME}"
+          echo ::set-env name=HUB_TAG::"${DOCKER_HUB_BASE_NAME}:${TAG_NAME}"
+      - name: Build node ${{ matrix.version }} base image
+        run: |
+          docker build . -t "${PKG_TAG}" \
+            --build-arg NODE_VERSION="${{ matrix.version }}"
+          docker tag "${PKG_TAG}" "${HUB_TAG}"
+      - run: docker images
+      - name: Login to Registries
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          DOCKER_HUB_TOKEN: ${{ secrets.DOCKER_HUB_TOKEN }}
+        run: |
+          echo "${GITHUB_TOKEN}" | docker login docker.pkg.github.com -u greatwizard --password-stdin
+          echo "${DOCKER_HUB_TOKEN}" | docker login -u greatwizard --password-stdin
+      - name: Push to GitHub Packages
+        run: docker push "${PKG_TAG}"
+      - name: Push to Docker Hub
+        run: docker push "${HUB_TAG}"
