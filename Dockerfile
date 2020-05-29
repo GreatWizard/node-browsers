@@ -59,9 +59,9 @@ RUN CHROME_VERSION="$(google-chrome --version)" && \
   chromedriver --version
 
 ENV DISPLAY :99
-RUN printf '#!/bin/sh\nXvfb :99 -screen 0 1280x1024x24 &\nexec "$@"\n' > /tmp/entrypoint \
- && chmod +x /tmp/entrypoint \
- && mv /tmp/entrypoint /entrypoint.sh
+RUN printf '#!/bin/sh\nXvfb :99 -screen 0 1280x1024x24 &\nexec "$@"\n' > /tmp/entrypoint && \
+ chmod +x /tmp/entrypoint && \
+ mv /tmp/entrypoint /entrypoint.sh
 
 ENTRYPOINT ["/entrypoint.sh"]
 CMD ["/bin/sh"]
