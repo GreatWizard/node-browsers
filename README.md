@@ -1,6 +1,7 @@
 # node-browsers
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Liberapay](http://img.shields.io/liberapay/patrons/GreatWizard.svg?logo=liberapay)](https://liberapay.com/GreatWizard/)
 
 Node.js docker images bundled with ready-to-use headless browsers:
 
@@ -15,9 +16,13 @@ When the images are rebuilt, the latest versions of browsers are installed.
 
 The available images are based on different versions of Node.js.
 
-| Image tag                    | Base Image     | Image Size |
-| ---------------------------- | -------------- | ---------- |
-| greatwizard/node-browsers:10 | node:10-buster | ~900 MB    |
-| greatwizard/node-browsers:12 | node:12-buster | ~902 MB    |
-| greatwizard/node-browsers:13 | node:13-buster | ~912 MB    |
-| greatwizard/node-browsers:14 | node:14-buster | ~913 MB    |
+| Image tag                      | Base Image       | Image Size |
+| ------------------------------ | ---------------- | ---------- |
+| `greatwizard/node-browsers:10` | `node:10-buster` | ~900 MB    |
+| `greatwizard/node-browsers:12` | `node:12-buster` | ~902 MB    |
+| `greatwizard/node-browsers:13` | `node:13-buster` | ~912 MB    |
+| `greatwizard/node-browsers:14` | `node:14-buster` | ~913 MB    |
+
+## License
+
+- [MIT License](https://github.com/greatwizard/node-browsers/blob/master/LICENSE)
