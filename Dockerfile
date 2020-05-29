@@ -2,6 +2,8 @@ ARG NODE_VERSION
 
 FROM node:$NODE_VERSION-buster
 
+LABEL maintainer="Guillaume Gérard"
+
 RUN apt-get update && apt-get install -y \
     git \
     xvfb \
