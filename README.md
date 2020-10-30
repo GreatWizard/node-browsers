@@ -22,6 +22,7 @@ The available images are based on different versions of Node.js.
 | `greatwizard/node-browsers:12` | `node:12-buster` | ~902 MB    |
 | `greatwizard/node-browsers:13` | `node:13-buster` | ~912 MB    |
 | `greatwizard/node-browsers:14` | `node:14-buster` | ~913 MB    |
+| `greatwizard/node-browsers:15` | `node:15-buster` | ~913 MB    |
 
 ## License
 
