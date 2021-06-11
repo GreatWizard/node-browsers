@@ -18,11 +18,12 @@ The available images are based on different versions of Node.js.
 
 | Image tag                      | Base Image       | Image Size |
 | ------------------------------ | ---------------- | ---------- |
-| `greatwizard/node-browsers:10` | `node:10-buster` | ~900 MB    |
-| `greatwizard/node-browsers:12` | `node:12-buster` | ~902 MB    |
-| `greatwizard/node-browsers:13` | `node:13-buster` | ~912 MB    |
-| `greatwizard/node-browsers:14` | `node:14-buster` | ~913 MB    |
-| `greatwizard/node-browsers:15` | `node:15-buster` | ~913 MB    |
+| `greatwizard/node-browsers:10` | `node:10-buster` | ~926 MB    |
+| `greatwizard/node-browsers:12` | `node:12-buster` | ~928 MB    |
+| `greatwizard/node-browsers:13` | `node:13-buster` | ~939 MB    |
+| `greatwizard/node-browsers:14` | `node:14-buster` | ~938 MB    |
+| `greatwizard/node-browsers:15` | `node:15-buster` | ~938 MB    |
+| `greatwizard/node-browsers:16` | `node:16-buster` | ~938 MB    |
 
 ## License
 
